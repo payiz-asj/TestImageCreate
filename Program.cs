@@ -12,7 +12,8 @@ namespace TestImageCreate
             // 获取项目文件的目录
             string projectDirectory = GetProjectRootPath();
             // 构建图片的完整路径
-            string imagePath = Path.Combine(projectDirectory, "Files", "1.jpg"); 
+            //string imagePath = Path.Combine(projectDirectory, "Files", "1.jpg"); 
+            string imagePath = Path.Combine(projectDirectory, "Files", "七仔.png"); 
             Test01.ImageHelper imageHandler = new Test01.ImageHelper();
             Bitmap bitmap = imageHandler.LoadImage(imagePath);
 
