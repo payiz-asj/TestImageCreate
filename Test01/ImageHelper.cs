@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.Versioning;
 
 namespace TestImageCreate.Test01
 {
@@ -63,5 +64,30 @@ namespace TestImageCreate.Test01
                 throw new ArgumentOutOfRangeException("坐标超出图像边界");
             }
         }
+
+        /// <summary>
+        /// 修改给定图像中指定坐标(x, y)处的颜色。
+        /// </summary>
+        /// <param name="image">要修改颜色的图像。</param>
+        /// <param name="x">像素的X坐标。</param>
+        /// <param name="y">像素的Y坐标。</param>
+        /// <param name="color">要设置的新颜色。</param>
+        [SupportedOSPlatform("windows")]
+        public void SetPixelColor(Bitmap image, int x, int y, Color color)
+        {
+            // 检查坐标是否在图像边界内
+            if (x >= 0 && x < image.Width && y >= 0 && y < image.Height)
+            {
+                image.SetPixel(x, y, color);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("坐标超出图像边界");
+            }
+        }
+
+
+
+
     }
 }
